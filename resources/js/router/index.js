@@ -1,16 +1,16 @@
-import Vue from 'vue';
+import * as Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import store from '../store'
 
-import App from '../App';
+import App from '../App.vue';
 import Login from '../views/Login';
 import Register from '../views/Register';
 
 Vue.use(VueRouter);
 
 const router =  new VueRouter({
-    //mode: 'history',
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -42,7 +42,6 @@ const router =  new VueRouter({
     ]
 });
 
-/*
 router.beforeEach((to, from, next) => {
     if(to.meta.requiresAuth && !store.getters.isAuthenticated){
         next('/login');
@@ -52,7 +51,6 @@ router.beforeEach((to, from, next) => {
         next();
     }
 });
-*/
 
 
 router.beforeEach((to, from, next) =>
